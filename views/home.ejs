@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %> </title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <h2>Add your name</h2>
+    <form method="post" action="/submit-form" id="myForm">
+        <input type="text" id="nameInput" name="name" placeholder="Enter your name">
+        <input type="text" id="emailInput" name="email" placeholder="Enter your email">
+        <input type="number" id="phonenumberInput" name="phone" placeholder="Enter your phonenumber">
+        <button type="submit">Send</button>
+    </form>
+
+    <h1>your name is <%= data.at(-1).id %></h1>
+    <h1>your name is <%= data.at(-1).name %></h1>
+    <h3>your email is <%= data.at(-1).email %></h3>
+    <h6>your phone number is <%= data.at(-1).phone %></h6>
+
+</body>
+
+</html>
