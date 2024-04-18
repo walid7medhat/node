@@ -23,15 +23,20 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  FormData.find()
-    .then((result) => {
-      res.render('home', { title: 'Home Page', data: result });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error fetching data from MongoDB');
-    });
+        res.render('home', { });
 });
+app.get('/user/add.html', (req, res) => {
+        res.render('user/add', { });
+});
+app.get('/user/edit.html', (req, res) => {
+        res.render('user/edit', { });
+});
+app.get('/user/view.html', (req, res) => {
+        res.render('user/view', { });
+});
+/* app.get('/user/view.html', (req, res) => {
+        res.render('user/view', { });
+}); */
 
 mongoose.connect('mongodb+srv://walidmedhat185:u3TTc8y2RtIFiGL4@cluster0.31hi4vn.mongodb.net/all-data?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
